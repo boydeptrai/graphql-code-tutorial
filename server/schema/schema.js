@@ -6,6 +6,7 @@ const typeDefs = gql`
     name: String!
     username: String!
     age: Int 
+    nationality: Nationality!
     friends: [User]
     favoriteMovies: [Movie]
 
@@ -14,12 +15,23 @@ const typeDefs = gql`
   type Movie {
     id: ID!
      name: String!
+     yearOfPublication: Int!
+     isInTheaters: Boolean!
   }
 
   type Query {
     users: [User!]!
     user(id: ID!): User!
-    movies: [Movie]!
+    movies: [Movie!]!
+    movie(name: String!): Movie!
+  }
+
+  enum Nationality {
+    CANADA
+    BRAZIL
+    CHILE
+    INDIA
+    GERMANY
   }
 
 `

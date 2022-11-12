@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client'
 import React from 'react'
 import { QUERY_ALL_MOVIES } from '../graphql-client/Queries'
+import SearchMovies from './SearchMovies';
 
 export default function Movies() {
     const {data, loading} = useQuery(QUERY_ALL_MOVIES);
@@ -12,6 +13,7 @@ export default function Movies() {
         {data && data.movies.map((movie) =>{
             return <h1 key={movie.name}>Movies Name: {movie.name}</h1>
         })}
+        <SearchMovies />
     </div>
   )
 }

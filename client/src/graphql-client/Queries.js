@@ -19,5 +19,13 @@ const QUERY_ALL_MOVIES =gql`
     }
    }
 `
+const GET_MOVIE_BY_NAME =gql`
+  query Movie($name: String!) {
+    movie(name: $name){
+       name
+       yearOfPublication
+    }
+  }
+`
 
-export { QUERY_ALL_USERS, QUERY_ALL_MOVIES}
+export { QUERY_ALL_USERS, QUERY_ALL_MOVIES, GET_MOVIE_BY_NAME}
